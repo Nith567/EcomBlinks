@@ -54,15 +54,7 @@ export const createPaidOrder = async (
           quantity: 1,
         },
       ],
-      shipping_lines: [
-        {
-          method_id: "flat_rate",
-          method_title: "solana usdc payment",
-          total: price.toString(),
-        },
-      ],
     };
-    //      const response = await axios.post('https://woo-swiftly-spooky-koala.wpcomstaging.com/wp-json/wc/v3/orders', data, {
     const response = await axios.post(`${wooUrl}/wp-json/wc/v3/orders`, data, {
       headers: {
         Authorization: `Basic ${basicAuthString}`,
