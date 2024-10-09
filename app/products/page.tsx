@@ -91,7 +91,7 @@ export default function Page() {
       }, 2000);
     } else {
       const res = await axios.post(`/blink/create`, JSON.stringify(metadata));
-      const url = `http://localhost:3000/blink?id=${res.data}`;
+      const url = `https://wooecomblinks.online/blink?id=${res.data}`;
       setTimeout(() => {
         setIsGenerating(false);
         setGeneratedLink(
