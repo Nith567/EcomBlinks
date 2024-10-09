@@ -115,10 +115,10 @@ export default function Page() {
   });
   return (
     <div className={`min-h-screen`}>
-      <div className="bg-purple-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="bg-blue-50 dark:bg-gray-800 transition-colors duration-300">
         <main className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold mb-8 text-purple-900 dark:text-purple-100">
-            Your Products
+          <h1 className="text-3xl font-bold mb-8 text-blue-900 dark:text-blue-200">
+            Your Store Products
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div></div>
