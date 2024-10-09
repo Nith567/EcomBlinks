@@ -1,6 +1,7 @@
 "use client";
 import { BlinkDialog } from "@/components/UI/Product/BlinkDialog";
 import { ProductCard } from "@/components/UI/Product/ProductCard";
+import { extractTextFromHTML } from "@/lib/extracthtml";
 import { Product } from "@/lib/products";
 import { useWallet } from "@solana/wallet-adapter-react";
 import axios, { AxiosResponse } from "axios";
@@ -77,7 +78,7 @@ export default function Page() {
     setGeneratedLink("");
     const metadata = {
       title: product.name,
-      description: product.description,
+      description: extractTextFromHTML(product.description),
       image: product.images[0].src,
       price: product.price,
       walletAddress: publicKey?.toBase58(),
