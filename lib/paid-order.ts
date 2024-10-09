@@ -52,13 +52,6 @@ export const createPaidOrder = async (
           quantity: 1,
         },
       ],
-      shipping_lines: [
-        {
-          method_id: "flat_rate",
-          method_title: "Crypto USDC Payment",
-          total: "120.00",
-        },
-      ],
     };
     //      const response = await axios.post('https://woo-swiftly-spooky-koala.wpcomstaging.com/wp-json/wc/v3/orders', data, {
     const response = await axios.post("${urlLink}/wp-json/wc/v3/orders", data, {
