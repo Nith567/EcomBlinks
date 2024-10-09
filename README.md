@@ -9,6 +9,8 @@ wooEcomBlinks integrates WooCommerce stores with Solana Blinks technology, allow
 - **CONSUMER_SECRET**: `cs_ca81c25c62458257e7bbe2b8081aaa7bae3ca955`
 > **⚠️ Reminder:** This testing credentials expires within a month.
 
+# Diagram Flow
+![flow](https://www.wooecomblinks.online/wooEcomBlinkFlow.png)
 
 ## Demo
 
