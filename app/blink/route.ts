@@ -125,10 +125,7 @@ export async function POST(req: Request) {
 
     const body: ActionPostRequest = await req.json();
 
-    const connection = new Connection(
-      clusterApiUrl("mainnet-beta"),
-      "confirmed"
-    );
+    const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
     let account: PublicKey;
     try {

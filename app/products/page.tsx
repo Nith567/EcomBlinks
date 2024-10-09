@@ -97,7 +97,7 @@ export default function Page() {
         setGeneratedLink(
           `https://dial.to/?action=solana-action:${encodeURIComponent(
             url
-          )}&cluster=mainnet`
+          )}&cluster=devnet`
         );
       }, 2000);
     }
