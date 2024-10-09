@@ -31,7 +31,7 @@ interface dataType {
   postcode: string;
   country: string;
   email: string;
-  phone: string;
+  phone: number;
   product_id: string;
   consumerKey: string;
   consumerSecret: string;
@@ -66,7 +66,7 @@ export const POST = async (req: Request) => {
       throw 'Invalid "signature" provided';
     }
 
-    const createdorder = createPaidOrder(
+    const createdorder = await createPaidOrder(
       data.first_name,
       data.last_name,
       data.address,
@@ -75,13 +75,14 @@ export const POST = async (req: Request) => {
       data.postcode,
       data.country,
       data.email,
-      data.phone,
-      db_data?.product_id!,
+      data.phone.toString(),
+      Number(db_data?.product_id!),
       //@ts-ignore
       db_data?.consumerKey,
       //@ts-ignore
       db_data.consumerSecret,
-      db_data?.wooUrl!,
+      //@ts-ignore
+      db_data?.wooUrl,
       db_data?.price
     );
     const payload: CompletedAction = {

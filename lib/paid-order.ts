@@ -10,7 +10,7 @@ export const createPaidOrder = async (
   country: string,
   email: string,
   phone: string,
-  product_id: string,
+  product_id: number,
   username: string,
   password: string,
   wooUrl: string,
@@ -36,7 +36,7 @@ export const createPaidOrder = async (
         postcode: postcode,
         country: country,
         email: email,
-        phone: phone,
+        phone: phone.toString(), // Ensure phone is a string,
       },
       shipping: {
         first_name: first_name,
@@ -58,7 +58,7 @@ export const createPaidOrder = async (
         {
           method_id: "flat_rate",
           method_title: "solana usdc payment",
-          total: price,
+          total: price.toString(),
         },
       ],
     };
