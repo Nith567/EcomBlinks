@@ -80,7 +80,9 @@ export const POST = async (req: Request) => {
       //@ts-ignore
       db_data?.consumerKey,
       //@ts-ignore
-      db_data.consumerSecret
+      db_data.consumerSecret,
+      db_data?.wooUrl!,
+      db_data?.price
     );
     const payload: CompletedAction = {
       type: "completed",
@@ -89,7 +91,7 @@ export const POST = async (req: Request) => {
       label: "Complete!",
       description: `Your order has been created successfully. Please check your email for confirmation.`,
     };
-
+    console.log("order response, ", createdorder);
     return Response.json(payload, {
       headers,
     });

@@ -14,26 +14,13 @@ export interface ProductImage {
   height: number;
 }
 
-
 export interface Product {
   id: number;
   name: string;
   price: number;
-  images: Array<{ src: string,name:string }>;
-  description:string
+  images: Array<{ src: string; name: string }>;
+  description: string;
 }
-// export interface Product {
-//   id: number;
-//   title: string;
-//   body_html: string;
-
-//   vendor: string;
-//   created_at: string;
-//   handle: string;
-//   variants: ProductVariant[];
-//   images: ProductImage[];
-//   image: ProductImage | null;
-// }
 
 export interface ShopifyApiResponse {
   products: Product[];

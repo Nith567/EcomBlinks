@@ -8,12 +8,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.shopify.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
         hostname: "testwoo.com", // Added hostname here
         port: "",
         pathname: "/**", // Allows all paths under the hostname

@@ -12,7 +12,9 @@ export const createPaidOrder = async (
   phone: string,
   product_id: string,
   username: string,
-  password: string
+  password: string,
+  wooUrl: string,
+  price: number
 ) => {
   try {
     const basicAuthString = Buffer.from(
@@ -22,7 +24,7 @@ export const createPaidOrder = async (
 
     const data = {
       payment_method: "bacs",
-      payment_method_title: "Crypto USDC Payment",
+      payment_method_title: "solana payment usdc",
       set_paid: true,
       billing: {
         first_name: first_name,
@@ -52,9 +54,16 @@ export const createPaidOrder = async (
           quantity: 1,
         },
       ],
+      shipping_lines: [
+        {
+          method_id: "flat_rate",
+          method_title: "solana usdc payment",
+          total: price,
+        },
+      ],
     };
     //      const response = await axios.post('https://woo-swiftly-spooky-koala.wpcomstaging.com/wp-json/wc/v3/orders', data, {
-    const response = await axios.post("${urlLink}/wp-json/wc/v3/orders", data, {
+    const response = await axios.post(`${wooUrl}/wp-json/wc/v3/orders`, data, {
       headers: {
         Authorization: `Basic ${basicAuthString}`,
       },

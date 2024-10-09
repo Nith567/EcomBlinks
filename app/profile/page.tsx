@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import ProfileForm from "@/components/UI/profile/Form";
 import {
@@ -21,7 +21,7 @@ export default function ProfilePage() {
                 Merchant Profile
               </CardTitle>
               <CardDescription className="text-center">
-                Configure your Shopify store and wallet connection
+                Configure your wooEcom store and wallet connection
               </CardDescription>
             </CardHeader>
             <CardContent>

@@ -1,11 +1,10 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-// import { checkShopifyAccess, verifyTokenAndGetShopInfo } from "./verify";
 
 interface User {
-  id:string;
+  id: string;
   consumerKey: string;
-  consumerSecret:string
+  consumerSecret: string;
   wooEcomWebsiteUrl: string;
 }
 
@@ -20,9 +19,9 @@ export const authOptions: NextAuthOptions = {
           placeholder: "Enter your consumer Key",
         },
         wooEcomWebsiteUrl: {
-          label: "Shopify Website URL",
+          label: "wooEcom Website URL",
           type: "text",
-          placeholder: "Enter your Shopify website URL",
+          placeholder: "Enter your WooCommerce website URL",
         },
         consumerSecret: {
           label: "Consumer Secret",
@@ -31,17 +30,20 @@ export const authOptions: NextAuthOptions = {
         },
       },
       async authorize(credentials): Promise<User | null> {
-        const { consumerKey, wooEcomWebsiteUrl, consumerSecret } = credentials || {};
-        
+        const { consumerKey, wooEcomWebsiteUrl, consumerSecret } =
+          credentials || {};
+
         if (!consumerKey || !wooEcomWebsiteUrl || !consumerSecret) {
-          throw new Error("Consumer key, secret, and Shopify website URL are required");
+          throw new Error(
+            "Consumer key, secret, and wooEcom website URL are required"
+          );
         }
-          return {
-            id:consumerKey,
-            consumerKey,
-            consumerSecret,
-            wooEcomWebsiteUrl,
-          }
+        return {
+          id: consumerKey,
+          consumerKey,
+          consumerSecret,
+          wooEcomWebsiteUrl,
+        };
       },
     }),
   ],
@@ -50,7 +52,7 @@ export const authOptions: NextAuthOptions = {
       return {
         ...session,
         user: {
-          id:token.consumerKey,
+          id: token.consumerKey,
           consumerKey: token.consumerKey,
           consumerSecret: token.consumerSecret,
           wooEcomWebsiteUrl: token.wooEcomWebsiteUrl,
@@ -59,8 +61,8 @@ export const authOptions: NextAuthOptions = {
     },
     async jwt({ token, user }: { token: any; user: any }) {
       if (user) {
-       token.id=user.id;
-        token.consumerKey = user.consumerKey; 
+        token.id = user.id;
+        token.consumerKey = user.consumerKey;
         token.consumerSecret = user.consumerSecret;
         token.wooEcomWebsiteUrl = user.wooEcomWebsiteUrl;
       }
@@ -72,7 +74,3 @@ export const authOptions: NextAuthOptions = {
     signIn: "/profile",
   },
 };
-
-
-
-
