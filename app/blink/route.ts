@@ -125,7 +125,10 @@ export async function POST(req: Request) {
 
     const body: ActionPostRequest = await req.json();
 
-    const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
+    const connection = new Connection(
+      clusterApiUrl("mainnet-beta"),
+      "confirmed"
+    );
 
     let account: PublicKey;
     try {
@@ -140,8 +143,7 @@ export async function POST(req: Request) {
       await connection.getLatestBlockhash();
 
     const mint_address = new PublicKey(
-      // "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
-      "9jyEAn15hMY7f5iKdUTPE5ZGaxD4BfsbHggwHFYvgF61"
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
     );
 
     try {
@@ -153,8 +155,7 @@ export async function POST(req: Request) {
       }
     } catch (err) {
       console.log(err);
-      let message =
-        "You are not a USDC Token holder. Please hold USDC tokens to buy this product";
+      let message = "Please hold USDC tokens to buy this product";
       return Response.json({ message } as ActionError, {
         status: 403,
         headers,
