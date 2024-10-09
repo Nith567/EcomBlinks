@@ -10,6 +10,10 @@ wooEcomBlinks integrates WooCommerce stores with Solana Blinks technology, allow
 > **⚠️ Reminder:** This testing credentials expires within a month.
 
 
+## Demo
+
+[![Demo Video](https://www.wooecomblinks.online/wooecom.png)](https://www.youtube.com/watch?v=xrx8YhmtjHg)
+
 
 # Getting Started
 
@@ -33,7 +37,7 @@ To set up the project, follow these steps:
 
 2. Navigate into the project directory:
     ```bash
-    cd <repoUrl>
+    cd WOOECOMBLINKS
     ```
 
 3. Install the necessary dependencies:
