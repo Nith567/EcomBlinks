@@ -12,7 +12,7 @@ wooEcomBlinks integrates WooCommerce stores with Solana Blinks technology, allow
 # Diagram Flow
 ![flow](https://www.wooecomblinks.online/wooEcomBlinkFlow.png)
 
-## Demo
+## Demo Video
 
 [![Demo Video](https://www.wooecomblinks.online/wooecom.png)](https://www.youtube.com/watch?v=xrx8YhmtjHg)
 
