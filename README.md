@@ -28,7 +28,7 @@ To set up the project, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone <repoUrl>
+    git clone https://github.com/Nith567/wooEcomBlinks
     ```
 
 2. Navigate into the project directory:
