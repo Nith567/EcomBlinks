@@ -4,9 +4,9 @@ wooEcomBlinks integrates WooCommerce stores with Solana Blinks technology, allow
 
 ## Testing Credentials
 
-- **Store Site**: [https://testwoo.com/bbad90360](https://testwoo.com/bbad90360)
-- **CONSUMER_KEY**: `ck_c5a8cb61828a54a756ff7f1b9834d5c49e46138b`
-- **CONSUMER_SECRET**: `cs_ca81c25c62458257e7bbe2b8081aaa7bae3ca955`
+- **Store Site**: [https://testwoo.com/nithinkatkam504106](https://testwoo.com/nithinkatkam504106)
+- **CONSUMER_KEY**: `ck_cd81f66dd94488639d35b2e24d0f67923a2c1491`
+- **CONSUMER_SECRET**: `cs_e798f307c58c5198bb5cd27aed4a5641f468a86d`
 > **⚠️ Reminder:** This testing credentials expires within a month.
 
 # Diagram Flow
